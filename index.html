@@ -12,52 +12,50 @@
 
 <body>
   <!-- ! Header -->
-  <header class="logo">
-    <img src="images/logo.svg" alt="logo">
-  </header>
-
-  <!-- ! Container -->
-  <div class="container">
-    <!-- ! first box -->
-    <div class="first-box">
-      <div class="bill-card">
-        <label id="label-bill">Bill</label>
-        <input type="text" placeholder="0" id="input-bill">
-      </div>
-
-      <div class="select-tip-card">
-        <label id="label-tip">Select Tip %</label>
-        <div class="tip-option-card">
-          <input type="button" value="5%" id="tip-option" name="button-tip">
-          <input type="button" value="10%" id="tip-option" name="button-tip">
-          <input type="button" value="15%" id="tip-option" name="button-tip">
-          <input type="button" value="25%" id="tip-option" name="button-tip">
-          <input type="button" value="50%" id="tip-option" name="button-tip">
-          <input type="text" id="input-tip-custom" placeholder="Custom" />
+  <div class="content-box">
+    <header class="logo">
+      <img src="images/logo.svg" alt="logo">
+    </header>
+    <!-- ! Container -->
+    <div class="container">
+      <!-- ! first box -->
+      <div class="first-box">
+        <div class="bill-card">
+          <label id="label-bill">Bill</label>
+          <input type="text" placeholder="0" id="input-bill">
+        </div>
+        <div class="select-tip-card">
+          <label id="label-tip">Select Tip %</label>
+          <div class="tip-option-card">
+            <input type="button" value="5%" id="tip-option" name="button-tip">
+            <input type="button" value="10%" id="tip-option" name="button-tip">
+            <input type="button" value="15%" id="tip-option" name="button-tip">
+            <input type="button" value="25%" id="tip-option" name="button-tip">
+            <input type="button" value="50%" id="tip-option" name="button-tip">
+            <input type="text" id="input-tip-custom" placeholder="Custom" />
+          </div>
+        </div>
+        <div class="number-people-card">
+          <label id="label-people">Number of People</label>
+          <input type="text" name="nPeople" placeholder="0" id="input-people">
         </div>
       </div>
-
-      <div class="number-people-card">
-        <label id="label-people">Number of People</label>
-        <input type="text" name="nPeople" placeholder="0" id="input-people">
+      <!-- ! second box -->
+      <div class="second-box">
+        <div class="tip-value-card">
+          <label>Tip Amount<br>
+            <p>/ person</p>
+          </label>
+          <label id="tip-value">$0.00</label>
+        </div>
+        <div class="person-amount-card">
+          <label for="person-amount">Total <br>
+            <p>/ person</p>
+          </label>
+          <label id="person-value">$0.00</label>
+        </div>
+        <input type="button" value="Reset" id="btn-clean"
       </div>
-    </div>
-    <!-- ! second box -->
-    <div class="second-box">
-      <div class="tip-value-card">
-        <label>Tip Amount<br>
-          <p>/ person</p>
-        </label>
-        <label id="tip-value">$0.00</label>
-      </div>
-
-      <div class="person-amount-card">
-        <label for="person-amount">Total <br>
-          <p>/ person</p>
-        </label>
-        <label id="person-value">$0.00</label>
-      </div>
-      <input type="button" value="Reset" id="btn-clean" 
     </div>
   </div>
 

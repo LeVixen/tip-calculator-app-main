@@ -32,40 +32,41 @@ body {
    width: 100vw;
    height: 100vh;
    background-color: var(--Light-grayish-cyan);
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
-   gap: 50px;
+   display: grid;
 }
 
 input {
    height: 2rem;
-   border-radius: 5px;
+   border-radius: 10px;
    text-align: end;
    background-color: var(--Very-light-grayish-cyan);
 }
 
+.content-box{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 25px   ;
+   margin: 0px 30px;
+}
+
+.logo{
+   text-align: center;
+}
 .container{
    max-width: 1440px;
-   display: grid;
-   grid-template-columns: 1fr 1fr;
-   justify-content: center;
-   flex-wrap: wrap;
-   gap: 30px;
-   margin: 0px 30px;
+   width: 100%;
+   gap: 35px;
+   display: flex;
    padding: 30px;
    background-color: var(--White);
    border-radius: 20px;
 }
 
 .first-box, .second-box {
+   width: 100%;
    display: grid;
-   align-items: center;
-   grid-template-areas:
-   "a "
-   "b"
-   "c";
    border-radius: 20px;
 }
 
@@ -78,28 +79,32 @@ input {
    display: grid;
 }
 
+.select-tip-card{
+   margin: 40px 0px;
+}
+
 .tip-option-card{
    display: grid;
    grid-template-columns: repeat(3, 1fr);
+   align-items: center;
+   justify-content: center;
    gap: 15px;
-   margin: 20px 0px;
+   margin: 10px 0px;
 }
 
 #tip-option{
    text-align: center;
    color: var(--White);
    background-color: var(--Very-dark-cyan);
-   width: 130px;
    cursor: pointer;
 }
 
 #input-tip-custom{
-   width: 130px;
+   width: 100%;
    background-color: var(--Very-light-grayish-cyan);
 }
 
 .second-box{
-   gap: 40px;
    padding: 30px;
    background-color: var(--Very-dark-cyan);
 }
@@ -114,11 +119,11 @@ input {
    color: var(--Grayish-cyan);
 }
 
-.second-box input{
+#btn-clean{
    color: var(--Very-dark-cyan);
    text-transform: uppercase;
    background-color: var(--Strong-cyan);
-   margin-top: 50px;
+   margin-top: 100px;
    text-align: center;
    cursor: pointer;
 }
@@ -132,4 +137,32 @@ input {
 #tip-value, #person-value{
    font-size: 54px;
    color: var(--Strong-cyan);
+}
+
+@media only screen and (max-width: 910px) {
+   .content-box{
+      margin: 0;
+      justify-content: end;
+   }
+   .container{
+      gap: 0px   ;
+      width: 100%;
+      flex-direction: column;
+      border-radius: 20px 20px 0px 0px;
+   }
+   .first-box{
+      gap: 20px;
+   }
+   .first-box, .second-box {
+      width: 100%;
+   }
+   .tip-option-card{
+      grid-template-columns: repeat(2, 1fr);
+   }
+   #btn-clean{
+      margin-top: 20px;
+   }
+   .select-tip-card{
+      margin: 10px 0px;
+   }
 }
