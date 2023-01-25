@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Tip calculator app</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header>
+    <img src="images/logo.svg" alt="">
+  </header>
+  <div class="container">
+    <div class="content">
+      <div class="card-1">
+
+        <div class="bill">
+          <label for="Bill" id="labelBill">Bill</label>
+          <input type="number" placeholder="0" id="inputBill">
+        </div>
+
+        <div class="tips">
+          <label for="tip" id="labelTip">Select Tip %</label>
+          <div class="card-options">
+            <input type="radio" value="5%" class="btnOptions"  name="radio">5%</input>
+            <input type="radio" value="10%" class="btnOptions" name="radio">10%</input>
+            <input type="radio" value="15%" class="btnOptions" name="radio" checked>15%</input>
+            <input type="radio" value="25%" class="btnOptions" name="radio">25%</input>
+            <input type="radio" value="50%" class="btnOptions" name="radio">50%</input>
+            <input type="number" class="btnCustom" placeholder="Custom"/>
+          </div>
+        </div>
+
+        <div class="people">
+          <label for="People" id="labelPeople">Number of People</label>
+          <input type="text" name="nPeople" placeholder="0" id="inputPeople" maxlength="2">
+        </div>
+
+      </div>
+
+      <div class="card-2">
+
+        <div class="tipAmount">
+          <label for="tipAmount">Tip Amount <br>
+            <p>/ person</p>
+          </label>
+          <label for="tipAmount" id="vAmount">$0.00</label>
+        </div>
+
+        <div class="personAmount">
+          <label for="personAmount">Total <br>
+            <p>/ person</p>
+          </label>
+          <label for="personAmount" id="pAmount">$0.00</label>
+        </div>
+
+        <input type="button" value="Reset" id="btnReset">
+
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Vinicius Martins</a>.
+  </div> -->
+  <script src="app.js"></script>
+</body>
+
+</html>
