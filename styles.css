@@ -1,4 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
+/* .attribution a {
+   color: hsl(228, 45%, 44%);
+   font-size: 11px;
+   text-align: center;
+} */
 
 :root {
    --Strong-cyan: hsl(172, 67%, 45%);
@@ -8,295 +14,122 @@
    --Light-grayish-cyan: hsl(185, 41%, 84%);
    --Very-light-grayish-cyan: hsl(189, 41%, 97%);
    --White: hsl(0, 0%, 100%);
-   --main-font: 'Overpass', sans-serif;
+   --main-font: 'Space Mono', monospace;
 }
 
-* {
+*,input,label {
    margin: 0;
    padding: 0;
    box-sizing: border-box;
-}
-
-.attribution a {
-   color: hsl(228, 45%, 44%);
-   font-size: 11px;
-   text-align: center;
+   font-family: var(--main-font);
+   outline: none;
+   border: none;
+   font-size: 24px;
+   font-weight: 600;
 }
 
 body {
    width: 100vw;
    height: 100vh;
+   background-color: var(--Light-grayish-cyan);
    display: flex;
+   flex-direction: column;
    align-items: center;
    justify-content: center;
-   flex-direction: column;
-   background-color: var(--Light-grayish-cyan);
-   font-family: var(--main-font);
+   gap: 50px;
 }
 
 input {
-   border: none;
+   height: 2rem;
+   border-radius: 5px;
+   text-align: end;
+   background-color: var(--Very-light-grayish-cyan);
 }
 
-header {
-   margin-bottom: 40px;
+.container{
+   max-width: 1440px;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   justify-content: center;
+   flex-wrap: wrap;
+   gap: 30px;
+   margin: 0px 30px;
+   padding: 30px;
+   background-color: var(--White);
+   border-radius: 20px;
 }
 
-p {
-   font-size: 13px;
+.first-box, .second-box {
+   display: grid;
+   align-items: center;
+   grid-template-areas:
+   "a "
+   "b"
+   "c";
+   border-radius: 20px;
+}
+
+.first-box label{
+   color: var(--Grayish-cyan);
+   font-size: 18px;
+}
+
+.bill-card,.number-people-card,.select-tip-card{
+   display: grid;
+}
+
+.tip-option-card{
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 15px;
+   margin: 20px 0px;
+}
+
+#tip-option{
+   text-align: center;
+   color: var(--White);
+   background-color: var(--Very-dark-cyan);
+   width: 130px;
+   cursor: pointer;
+}
+
+#input-tip-custom{
+   width: 130px;
+   background-color: var(--Very-light-grayish-cyan);
+}
+
+.second-box{
+   gap: 40px;
+   padding: 30px;
+   background-color: var(--Very-dark-cyan);
+}
+
+.second-box label{
+   font-size: 16px;
+   color: var(--White);
+}
+
+.second-box p{
+   font-size: 12px;
    color: var(--Grayish-cyan);
 }
 
-.container {
-   width: 980px;
-   border-radius: 20px;
-   background-color: var(--White);
-}
-
-.content {
-   width: 100%;
-   height: 100%;
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
-   padding: 30px;
-}
-
-.card-1 {
-   width: 49%;
-   height: 100%;
-   display: flex;
-   flex-direction: column;
-}
-
-.card-2 {
-   width: 49%;
-   height: 100%;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   padding: 20px 30px;
-   border-radius: 10px;
-   background-color: var(--Very-dark-cyan);
-}
-
-.tipAmount {
-   width: 100%;
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
-   color: var(--Very-light-grayish-cyan);
-}
-
-.personAmount {
-   width: 100%;
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
-   margin-bottom: 130px;
-   color: var(--Very-light-grayish-cyan);
-}
-
-#vAmount,
-#pAmount {
-   font-size: 48px;
-   color: var(--Strong-cyan);
-}
-
-.bill {
-   display: flex;
-   flex-direction: column;
-}
-
-.tips {
-   display: flex;
-   flex-direction: column;
-   margin-top: 30px;
-   margin-bottom: 30px;
-}
-
-/* .card-options {
-   display: grid;
-   grid-template-columns: 1fr 1fr 1fr;
-} */
-
-.people {
-   display: flex;
-   flex-direction: column;
-}
-
-/* .btnOptions, */
-.btnCustom {
-   width: 140px;
-   height: 50px;
-   border-radius: 5px;
-   color: var(--White);
-   background-color: var(--Very-dark-cyan);
-   font-family: var(--main-font);
-   font-size: 24px;
-   margin: 5px;
-   margin-left: 0;
+.second-box input{
+   color: var(--Very-dark-cyan);
+   text-transform: uppercase;
+   background-color: var(--Strong-cyan);
+   margin-top: 50px;
    text-align: center;
    cursor: pointer;
 }
 
-/* .btnOptions:focus {
-   color: var(--Very-dark-cyan);
-   background-color: var(--Strong-cyan);
+.tip-value-card, .person-amount-card{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
 }
 
-.btnOptions:hover {
-   background-color: var(--Light-grayish-cyan);
-   color: var(--Very-dark-cyan);
-} */
-
-
-.btnOptions{
-   margin: 5px;
-   cursor: pointer;
-}
-
-.card-options{
-   display: grid;
-}
-
-
-.btnCustom:nth-child(6) {
-   text-align: right;
-   padding-right: 15px;
-   color: var(--Very-dark-cyan);
-   background-color: var(--Very-light-grayish-cyan);
-}
-
-.btnCustom:nth-child(6)::placeholder {
-   color: var(--Dark-grayish-cyan);
-}
-
-.btnCustom:nth-child(6):focus {
-   outline: none;
-   border: 2px solid;
-   border-color: var(--Strong-cyan);
-}
-
-#btnReset {
-   width: 300px;
-   height: 50px;
-   border-radius: 5px;
-   background-color: var(--Strong-cyan);
-   color: var(--Very-dark-cyan);
-   font-family: var(--main-font);
-   font-size: 24px;
-   text-transform: uppercase;
-   cursor: pointer;
-}
-
-#btnReset:hover {
-   background-color: var(--Light-grayish-cyan);
-   color: var(--Very-dark-cyan);
-}
-
-#inputPeople,
-#inputBill {
-   height: 40px;
-   font-family: var(--main-font);
-   color: var(--Very-dark-cyan);
-   border-radius: 5px;
-   text-align: right;
-   font-size: 24px;
-   padding-top: 10px;
-   padding-right: 10px;
-}
-
-#inputBill {
-   background: url(images/icon-dollar.svg) left / contain no-repeat;
-   background-size: 16px 20px;
-   background-position: 16px;
-   background-color: var(--Very-light-grayish-cyan);
-}
-
-#inputPeople {
-   background: url(images/icon-person.svg) left / contain no-repeat;
-   background-size: 16px 20px;
-   background-position: 16px;
-   background-color: var(--Very-light-grayish-cyan);
-}
-
-input[type=number]::-webkit-inner-spin-button {
-   -webkit-appearance: none;
-}
-
-#inputBill:focus,
-#inputPeople:focus {
-   outline: none;
-   border: 2px solid;
-   border-color: var(--Strong-cyan);
-}
-
-#inputPeople::placeholder,
-#inputBill::placeholder {
-   opacity: 0.3;
-   color: var(--Dark-grayish-cyan);
-}
-
-#labelBill,
-#labelTip,
-#labelPeople {
-   color: var(--Dark-grayish-cyan);
-   margin-bottom: 10px;
-}
-
-
-@media only screen and (max-width: 990px) {
-
-   .container {
-      width: auto;
-   }
-
-   .content {
-      width: 100%;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-   }
-
-   .card-options {
-      grid-template-columns: 170px 170px;
-      justify-content: space-between;
-      text-align: center;
-   }
-
-   .card-1 {
-      width: 100%;
-      height: 420px;
-   }
-
-   .card-2 {
-      width: 100%;
-      height: 250px;
-   }
-
-   .personAmount {
-      margin-bottom: 40px;
-   }
-
-   .tips {
-      margin: 10px 0px;
-      padding: 0;
-   }
-
-   #btnOptions {
-      width: 170px;
-      margin: 0;
-   }
-
-   #vAmount,
-   #pAmount {
-      font-size: 38px;
-   }
-
-   #inputBill,
-   #inputPeople {
-      height: 60px;
-      font-size: 28px;
-   }
+#tip-value, #person-value{
+   font-size: 54px;
+   color: var(--Strong-cyan);
 }
