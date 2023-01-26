@@ -14,10 +14,13 @@
    --Light-grayish-cyan: hsl(185, 41%, 84%);
    --Very-light-grayish-cyan: hsl(189, 41%, 97%);
    --White: hsl(0, 0%, 100%);
+   --color-error: rgba(255, 0, 0, 0.877);
    --main-font: 'Space Mono', monospace;
 }
 
-*,input,label {
+*,
+input,
+label {
    margin: 0;
    padding: 0;
    box-sizing: border-box;
@@ -42,19 +45,20 @@ input {
    background-color: var(--Very-light-grayish-cyan);
 }
 
-.content-box{
+.content-box {
    display: flex;
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   gap: 25px   ;
+   gap: 25px;
    margin: 0px 30px;
 }
 
-.logo{
+.logo {
    text-align: center;
 }
-.container{
+
+.container {
    max-width: 1440px;
    width: 100%;
    gap: 35px;
@@ -62,107 +66,184 @@ input {
    padding: 30px;
    background-color: var(--White);
    border-radius: 20px;
+   transition: 1s;
 }
 
-.first-box, .second-box {
+.first-box,
+.second-box {
    width: 100%;
    display: grid;
    border-radius: 20px;
+   transition: 1s;
 }
 
-.first-box label{
+.first-box label {
    color: var(--Grayish-cyan);
    font-size: 18px;
+   transition: 1s;
 }
 
-.bill-card,.number-people-card,.select-tip-card{
+.bill-card,
+.number-people-card,
+.select-tip-card {
    display: grid;
+   transition: 1s;
 }
 
-.select-tip-card{
+.select-tip-card {
    margin: 40px 0px;
+   transition: 1s;
 }
 
-.tip-option-card{
+.tip-option-card {
    display: grid;
    grid-template-columns: repeat(3, 1fr);
    align-items: center;
    justify-content: center;
    gap: 15px;
    margin: 10px 0px;
+   transition: 1s;
+}
+#label-people{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   transition: 1s;
+}
+#input-bill, #input-people,#input-tip-custom {
+   padding-right: 15px;
+   color: var(--Very-dark-cyan);
 }
 
-#tip-option{
-   text-align: center;
+#input-bill:focus, #input-people:focus, #input-tip-custom:focus{
+   border: 2px solid var(--Strong-cyan);
+}
+
+.tips {
+   height: 2rem;
+   border-radius: 10px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
    color: var(--White);
    background-color: var(--Very-dark-cyan);
    cursor: pointer;
+   transition: 300ms;
 }
 
-#input-tip-custom{
+.tip-activ{
+   color: var(--Very-dark-cyan);
+   background-color: var(--Strong-cyan);
+}
+
+.tips:hover{
+   color: var(--Very-dark-cyan);
+   background-color: var(--Light-grayish-cyan);
+}
+
+#input-tip-custom {
    width: 100%;
    background-color: var(--Very-light-grayish-cyan);
+   transition: 1s;
 }
 
-.second-box{
+#people-error{
+   display: none;
+   text-align: end;
+   color: var(--color-error);
+   font-size: 14px;
+}
+
+.second-box {
    padding: 30px;
    background-color: var(--Very-dark-cyan);
 }
 
-.second-box label{
+.second-box label {
    font-size: 16px;
    color: var(--White);
+   transition: 1s;
 }
 
-.second-box p{
+.second-box p {
    font-size: 12px;
    color: var(--Grayish-cyan);
+   transition: 1s;
 }
 
-#btn-clean{
+#btn-clean {
    color: var(--Very-dark-cyan);
    text-transform: uppercase;
    background-color: var(--Strong-cyan);
    margin-top: 100px;
    text-align: center;
    cursor: pointer;
+   transition: 300ms;
 }
 
-.tip-value-card, .person-amount-card{
+#btn-clean:hover{
+   background-color: var(--Light-grayish-cyan);
+   color: var(--Very-dark-cyan);
+}
+
+.tip-value-card,
+.person-amount-card {
    display: flex;
    align-items: center;
    justify-content: space-between;
+   transition: 1s;
 }
 
-#tip-value, #person-value{
+#tip-value,
+#person-value {
    font-size: 54px;
    color: var(--Strong-cyan);
+   transition: 1s;
 }
 
 @media only screen and (max-width: 910px) {
-   .content-box{
+   .content-box {
       margin: 0;
       justify-content: end;
+      transition: 1s;
    }
-   .container{
-      gap: 0px   ;
+
+   .container {
+      gap: 0px;
       width: 100%;
       flex-direction: column;
       border-radius: 20px 20px 0px 0px;
+      transition: 1s;
    }
-   .first-box{
+
+   .first-box {
       gap: 20px;
+      transition: 1s;
    }
-   .first-box, .second-box {
+
+   .second-box {
+      margin-top: 10px;
+      transition: 1s;
+   }
+
+   .first-box,
+   .second-box {
       width: 100%;
+      transition: 1s;
    }
-   .tip-option-card{
+
+   .tip-option-card {
       grid-template-columns: repeat(2, 1fr);
+      transition: 1s;
    }
-   #btn-clean{
+
+   #btn-clean {
       margin-top: 20px;
+      transition: 1s;
    }
-   .select-tip-card{
+
+   .select-tip-card {
       margin: 10px 0px;
+      transition: 1s;
    }
 }

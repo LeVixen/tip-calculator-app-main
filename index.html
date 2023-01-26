@@ -22,22 +22,22 @@
       <div class="first-box">
         <div class="bill-card">
           <label id="label-bill">Bill</label>
-          <input type="text" placeholder="0" id="input-bill">
+          <input type="text" placeholder="0" value="0" id="input-bill">
         </div>
         <div class="select-tip-card">
           <label id="label-tip">Select Tip %</label>
           <div class="tip-option-card">
-            <input type="button" value="5%" id="tip-option" name="button-tip">
-            <input type="button" value="10%" id="tip-option" name="button-tip">
-            <input type="button" value="15%" id="tip-option" name="button-tip">
-            <input type="button" value="25%" id="tip-option" name="button-tip">
-            <input type="button" value="50%" id="tip-option" name="button-tip">
+            <div class="tips tip-5">5%</div>
+            <div class="tips tip-10">10%</div>
+            <div class="tips tip-15">15%</div>
+            <div class="tips tip-25">25%</div>
+            <div class="tips tip-50">50%</div>
             <input type="text" id="input-tip-custom" placeholder="Custom" />
           </div>
         </div>
         <div class="number-people-card">
-          <label id="label-people">Number of People</label>
-          <input type="text" name="nPeople" placeholder="0" id="input-people">
+          <label id="label-people">Number of People<p id="people-error">Can't be a zero</p></label>
+          <input type="text" name="nPeople" placeholder="0" value="0" id="input-people">
         </div>
       </div>
       <!-- ! second box -->
@@ -54,17 +54,16 @@
           </label>
           <label id="person-value">$0.00</label>
         </div>
-        <input type="button" value="Reset" id="btn-clean"
+        <input type="button" value="Reset" id="btn-clean" </div>
       </div>
     </div>
-  </div>
 
-  <!-- ! footer -->
-  <!-- <div class="attribution">
+    <!-- ! footer -->
+    <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Vinicius Martins</a>.
   </div> -->
-  <script src="app.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>
