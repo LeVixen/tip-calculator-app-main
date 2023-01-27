@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
 
-/* .attribution a {
+.attribution a {
    color: hsl(228, 45%, 44%);
    font-size: 11px;
    text-align: center;
-} */
+}
 
 :root {
    --Strong-cyan: hsl(172, 67%, 45%);
