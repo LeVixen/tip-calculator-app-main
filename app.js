@@ -1,65 +1,112 @@
 const tips = document.querySelectorAll(".tips");
-const valueBill = document.querySelector("#input-bill");
-const tipCuston = document.querySelector('#input-tip-custom');
-const valuePeople = document.querySelector("#input-people");
+const inputBill = document.querySelector("#input-bill");
+const inputPeople = document.querySelector("#input-people");
+const inputCuston = document.querySelector('#input-tip-custom');
 const tipAmount = document.querySelector('#tip-value');
 const tipTotal = document.querySelector('#person-value');
 const resetBtn = document.querySelector('#btn-clean');
 const error = document.querySelector('#people-error')
 
-valuePeople.addEventListener('input', getValue);
-valueBill.addEventListener('input', getValue);
-resetBtn.addEventListener('click', reset);
-
-valuePeople.value = 1;
-valueBill.value = 0;
+inputBill.addEventListener('input', billInputFun);
+inputPeople.addEventListener('input', peopleInputFun);
 
 tips.forEach(function (val) {
-   val.addEventListener('click', handleClick)
+   val.addEventListener('click', handleClick);
+});
 
-})
+resetBtn.addEventListener("click", reset);
+inputCuston.addEventListener("input", tipInputFun);
+
+inputBill.value = '0';
+inputPeople.value = '1';
+tipAmount.innerHTML = '$' + (0).toFixed(2);
+tipTotal.innerHTML = '$' + (0).toFixed(2);
+
+let valueBill = 0;
+let valuePeople = 1;
+let tipValue = 0;
+
+function billInputFun() {
+   valueBill = parseFloat(inputBill.value);
+   calculateTip();
+};
+
+function tipInputFun() {
+   tipValue = parseFloat(inputCuston.value / 100);
+
+   tips.forEach(function (val) {
+      val.classList.remove('tip-activ');
+   });
+   calculateTip();
+}
+
+function peopleInputFun() {
+   valuePeople = parseFloat(inputPeople.value);
+
+   if (valuePeople < 1) {
+      error.style.display = 'flex';
+   } else {
+      error.style.display = 'none';
+      calculateTip();
+   }
+}
 
 function handleClick(event) {
    tips.forEach(function (val) {
+      inputCuston.value = '';
       val.classList.remove('tip-activ');
       if (event.target.innerHTML == val.innerHTML) {
          val.classList.add('tip-activ');
-         getValue(parseInt(val.innerHTML));
+         tipValue = parseFloat(val.innerHTML) / 100;
       }
-   })
-};
-
-
-function getValue(value) {
-   let vBill = valueBill.value;
-   let vPeople = valuePeople.value;
-
-   let totalTip = (vBill * value) / 100;
-   let totalTipPerson = totalTip / vPeople;
-
-   tipAmount.innerHTML = `$${totalTipPerson.toFixed(2)}`;
-
-   let total = vBill / vPeople;
-   tipTotal.innerHTML = `$${total.toFixed(2)}`;
-
-   getError()
+   });
+   calculateTip();
 }
 
-function getError() {
-   error.style.display = 'none';
-   if (valuePeople.value < 1) {
-      error.style.display = 'flex';
+function calculateTip() {
+   if (valuePeople >= 1) {
+      let totalTip = (valueBill * tipValue) / valuePeople;
+      let total = valueBill / valuePeople;
+      tipAmount.innerHTML = "$" + totalTip.toFixed(2);
+      tipTotal.innerHTML = "$" + total.toFixed(2);
    }
 }
 
 function reset() {
-   tipAmount.innerHTML = "$0.00";
-   tipTotal.innerHTML = "$0.00";
-   valuePeople.value = "0";
-   valueBill.value = "0";
-   tipCuston.value = "";
-
-   tips.forEach(function (val) {
-      val.classList.remove('tip-activ');
-   })
+   inputBill.value = '0';
+   billInputFun();
+   inputPeople.value = '1';
+   peopleInputFun();
+   inputCuston.value = '';
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
